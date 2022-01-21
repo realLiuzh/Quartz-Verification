@@ -1,0 +1,33 @@
+
+
+spring:
+  quartz:
+    job-store-type: jdbc  #将任务等数据保存到数据库
+    jdbc:
+      initialize-schema: always
+  datasource:
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/quartz?serverTimezone=GMT%2b8
+
+
+
+  #    wait-for-jobs-to-complete-on-shutdown: true #程序结束时会等待quartz相关的内容结束
+#    overwrite-existing-jobs: true   #QuartzScheduler启动时实时更新已经存在的job
+#    properties:
+#      org:
+#        quartz:
+#          scheduler:
+#            instanceName: scheduler
+#            instanceId: AUTO
+#          jobStore:
+#            class: org.quartz.impl.jdbcjobstore.JobStoreTX
+#            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+#            tablePrefix: QRTZ_
+#            useProperties: false
+#          threadPool:
+#            class: org.quartz.simpl.SimpleThreadPool
+#            threadCount: 10
+#            threadPriority: 5
+#            threadsInheritContextClassLoaderOfInitializingThread: true
